@@ -17,9 +17,9 @@ finwiz_url = 'https://finviz.com/quote.ashx?t='
 news_tables = {}
 Company1="AMZN"
 Company2="NEM"
-Company3="MGM"
+Company4="MGM"
 
-tickers = [Company1,Company2,Company3]
+tickers = [Company1,Company2,Company4]
 
 for ticker in tickers:
     url = finwiz_url + ticker

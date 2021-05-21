@@ -17,9 +17,11 @@ finwiz_url = 'https://finviz.com/quote.ashx?t='
 news_tables = {}
 Company1="AMZN"
 Company2="NEM"
-Company4="MGM"
+Company3="MGM"
+MergedCompanyString=Company1+Company2+Company3
 
-tickers = [Company1,Company2,Company4]
+
+tickers = [Company1,Company2,Company3]
 
 for ticker in tickers:
     url = finwiz_url + ticker
@@ -78,8 +80,8 @@ for file_name, news_table in news_tables.items():
         
 parsed_news
 
-with open('.txt', 'w') as f:
-    for item in my_list:
+with open(MergedCompanyString+'.txt', 'w') as f:
+    for item in parsed_news:
         f.write("%s\n" % item)
 
 print (parsed_news)

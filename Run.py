@@ -16,8 +16,8 @@ finwiz_url = 'https://finviz.com/quote.ashx?t='
 
 news_tables = {}
 Company1="AMZN"
-Company2="NEM"
-Company3="MGM"
+Company2="AMC"
+Company3="GME"
 MergedCompanyString=Company1+Company2+Company3
 
 

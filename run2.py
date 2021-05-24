@@ -1,5 +1,3 @@
-
-
 # Import libraries
 from urllib.request import urlopen, Request
 import nltk
@@ -11,11 +9,6 @@ import matplotlib.pyplot as plt
 # NLTK VADER for sentiment analysis
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 nltk.download('vader_lexicon')
-import datetime 
-from datetime import date
-import os
-
-today=date.today()
 
 finwiz_url = 'https://finviz.com/quote.ashx?t='
 
@@ -23,7 +16,7 @@ news_tables = {}
 Company1="AMZN"
 Company2="AMC"
 Company3="GME"
-MergedCompanyString=Company1+Company2+Company3+today
+MergedCompanyString=Company1+Company2+Company3
 
 
 tickers = [Company1,Company2,Company3]
@@ -84,26 +77,6 @@ for file_name, news_table in news_tables.items():
         parsed_news.append([ticker, date, time, text])
         
 parsed_news
-
-import os.path
-
-save_path = 'C:/example/'
-
-name_of_file = raw_input("What is the name of the file: ")
-
-completeName = os.path.join(save_path, name_of_file+".txt")         
-
-file1 = open(completeName, "w")
-
-toFile = raw_input("Write what you want into the field")
-
-file1.write(toFile)
-
-file1.close()
-
-file1 = open(completeName, "w")
-file1.write("file information")
-file1.close()
 
 with open(MergedCompanyString+'.txt', 'w') as f:
     for item in parsed_news:
